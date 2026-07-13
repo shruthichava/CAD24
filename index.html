@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-background">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1a2233" />
+    <title>CAD24 — 48-Hour Engineering Hackathon</title>
+    <meta
+      name="description"
+      content="CAD24 is a 48-hour engineering hackathon for makers, tinkerers, and professional bug-creators. Hardware, software, AI, robots — build weird, ship fast, break things."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+      <div class="container header__inner">
+        <a href="#" class="brand" aria-label="CAD24 home">
+          <span class="brand__mark" aria-hidden="true">&gt;_</span>
+          <span class="brand__name">CAD<span class="accent">24</span></span>
+        </a>
+
+        <nav class="nav" aria-label="Primary">
+          <a href="#about">./about</a>
+          <a href="#tracks">./tracks</a>
+          <a href="#schedule">./schedule</a>
+          <a href="#prizes">./prizes</a>
+          <a href="#faq">./faq</a>
+        </nav>
+
+        <a href="#register" class="btn btn--primary nav__cta">register()</a>
+
+        <button
+          id="menuToggle"
+          class="menu-toggle"
+          type="button"
+          aria-label="Open menu"
+          aria-expanded="false"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+      <div id="mobileMenu" class="mobile-menu" hidden>
+        <a href="#about">./about</a>
+        <a href="#tracks">./tracks</a>
+        <a href="#schedule">./schedule</a>
+        <a href="#prizes">./prizes</a>
+        <a href="#faq">./faq</a>
+        <a href="#register" class="btn btn--primary">register()</a>
+      </div>
+    </header>
+
+    <main>
+      <!-- ===== HERO ===== -->
+      <section class="hero bg-blueprint">
+        <div class="hero__fade" aria-hidden="true"></div>
+        <div class="container hero__grid">
+          <div>
+            <div class="badge">
+              <span class="badge__dot" aria-hidden="true"></span>
+              <span class="muted">STATUS:</span>
+              <span>registration_open</span>
+            </div>
+
+            <h1 class="hero__title">
+              
+              On your <span class="accent">mark.</span><br />
+              Get <span class="accent-2">set.</span>
+              CAD!.<br />
+            </h1>
+
+            <p class="hero__lead">
+              CAD24 is a 48-hour engineering hackathon for makers, tinkerers, and
+              professional bug-creators. Hardware, software, AI, robots—if you can solder it
+              or compile it, bring it.
+            </p>
+
+            <div class="hero__actions">
+              <a href="#register" class="btn btn--primary btn--lg">register() &rarr;</a>
+              <a href="#tracks" class="btn btn--outline btn--lg">view --tracks</a>
+            </div>
+
+            <dl class="hero__meta">
+              <div><span class="ico" aria-hidden="true">[#]</span><dd>Sep 19–21, 2026</dd></div>
+              <div><span class="ico" aria-hidden="true">[@]</span><dd>Building 42, Lab 3</dd></div>
+              <div><span class="ico" aria-hidden="true">[*]</span><dd>600 hackers</dd></div>
+            </dl>
+          </div>
+
+          <div class="hero__side">
+            <div class="terminal">
+              <div class="terminal__bar">
+                <span class="dot dot--1"></span>
+                <span class="dot dot--2"></span>
+                <span class="dot dot--3"></span>
+                <span class="terminal__path">CAD24@2026: ~/init</span>
+              </div>
+              <div class="terminal__body">
+                <p><span class="accent-2">$</span> npx create-CAD24-app my-hack</p>
+                <p><span class="accent">✔</span> Scaffolding wild idea...</p>
+                <p><span class="accent">✔</span> Installing caffeine@latest</p>
+                <p><span class="accent">✔</span> Recruiting 3 teammates</p>
+                <p class="muted"><span class="accent-2">→</span> 48h until deadline</p>
+                <p><span class="accent-2">$</span> ship it<span class="caret"></span></p>
+              </div>
+            </div>
+
+            <div class="countdown">
+              <p class="countdown__label">// time_until_hacking</p>
+              <div class="countdown__grid">
+                <div class="count-unit"><span id="cd-days" class="count-unit__val">00</span><span class="count-unit__lbl">days</span></div>
+                <div class="count-unit"><span id="cd-hours" class="count-unit__val">00</span><span class="count-unit__lbl">hrs</span></div>
+                <div class="count-unit"><span id="cd-mins" class="count-unit__val">00</span><span class="count-unit__lbl">min</span></div>
+                <div class="count-unit"><span id="cd-secs" class="count-unit__val">00</span><span class="count-unit__lbl">sec</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== MARQUEE ===== -->
+      <div class="marquee">
+        <div class="marquee__track" id="marqueeTrack"></div>
+      </div>
+
+      <!-- ===== STATS / ABOUT ===== -->
+      <section id="about" class="container section">
+        <div class="about">
+          <div>
+            <p class="eyebrow">// readme.md</p>
+            <h2 class="section__title">
+              A weekend-sized excuse to build the thing you keep talking about.
+            </h2>
+            <p class="section__lead">
+              Grab a team (or find one here), pick a track, and turn a whiteboard sketch into a
+              working demo in 48 hours. We supply the space, the snacks, the soldering irons, and
+              mentors who have shipped real hardware and software. You supply the questionable
+              sleep schedule.
+            </p>
+          </div>
+          <dl class="stats" id="statsGrid"></dl>
+        </div>
+      </section>
+
+      <!-- ===== TRACKS ===== -->
+      <section id="tracks" class="bg-dots band">
+        <div class="container section">
+          <div class="section__head">
+            <div>
+              <p class="eyebrow">// pick_a_track</p>
+              <h2 class="section__title">Six ways to hack.</h2>
+            </div>
+            <p class="section__note">
+              Choose one at check-in. Switching mid-event is allowed and mildly encouraged.
+            </p>
+          </div>
+          <ul class="tracks" id="tracksGrid"></ul>
+        </div>
+      </section>
+
+      <!-- ===== SCHEDULE ===== -->
+      <section id="schedule" class="container section">
+        <div class="section__head--stack">
+          <p class="eyebrow">// run_schedule</p>
+          <h2 class="section__title">48 hours, mapped out.</h2>
+        </div>
+        <div class="schedule" id="scheduleGrid"></div>
+      </section>
+
+      <!-- ===== PRIZES ===== -->
+      <section id="prizes" class="bg-dots band">
+        <div class="container section">
+          <div class="section__head--center">
+            <p class="eyebrow">// prize_pool</p>
+            <h2 class="section__title">$50K on the line.</h2>
+          </div>
+          <div class="podium" id="podiumGrid"></div>
+          <div class="bounties">
+            <p class="countdown__label">// side_bounties</p>
+            <ul class="bounties__list" id="bountiesList"></ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== FAQ ===== -->
+      <section id="faq" class="container section section--narrow">
+        <div class="section__head--center">
+          <p class="eyebrow">// frequently_asked</p>
+          <h2 class="section__title">while (questions) { answer(); }</h2>
+        </div>
+        <div class="faq" id="faqList"></div>
+      </section>
+
+      <!-- ===== REGISTER ===== -->
+      <section id="register" class="bg-blueprint band band--top">
+        <div class="container section section--narrow register">
+          <p class="eyebrow">// join_the_route</p>
+          <h2 class="register__title">Reserve your <span class="accent">spot.</span></h2>
+          <p class="register__lead">
+            Drop your email to lock in a badge. We'll send confirmation, logistics, and the
+            occasional geeky meme.
+          </p>
+
+          <form id="registerForm" class="register__form">
+            <input
+              id="emailInput"
+              type="email"
+              required
+              placeholder="you@terminal.dev"
+              aria-label="Email address"
+            />
+            <button type="submit" class="btn btn--primary btn--lg">register() &rarr;</button>
+          </form>
+          <div id="registerSuccess" class="register__success" hidden>
+            <span class="accent">✔</span>
+            <span>Registered! Check your inbox — welcome to CAD24.</span>
+          </div>
+
+          <p class="register__count">312 / 600 spots claimed</p>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+      <div class="container footer__top">
+        <div>
+          <a href="#" class="brand" aria-label="CAD24 home">
+            <span class="brand__mark" aria-hidden="true">&gt;_</span>
+            <span class="brand__name">HACK<span class="accent">ROUTE</span></span>
+          </a>
+          <p class="footer__tag">
+            A 48-hour engineering hackathon. Built by hackers, for hackers.
+          </p>
+        </div>
+        <div class="footer__social">
+          <a href="#" aria-label="Website">WWW</a>
+          <a href="#" aria-label="Discord">IRC</a>
+          <a href="#" aria-label="Contact">@</a>
+        </div>
+      </div>
+      <div class="footer__bottom container">
+        <span>© 2026 CAD24. MIT licensed vibes.</span>
+        <span>&lt;/&gt; with too much coffee</span>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
