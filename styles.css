@@ -1,36 +1,27 @@
 :root {
   color-scheme: dark;
   --radius: 0.25rem;
-
   --background: #05101c;
   --foreground: #ecf3f8;
-
   --card: #0c1928;
   --card-foreground: #ecf3f8;
-
   --primary: #fa6e1c;
   /* orange */
   --primary-foreground: #07121e;
-
   --secondary: #008cdf;
   /* blue */
   --secondary-foreground: #f3faff;
-
   --muted: #192532;
   --muted-foreground: #96a7b7;
-
   --accent: #008cdf;
   --chart-3: #f4a437;
-
   --border: #283a4c;
   --input: #202f3f;
   --ring: #fa6e1c;
-
   --font-sans: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 }
 
-/* ===== Reset ===== */
 *,
 *::before,
 *::after {
@@ -73,7 +64,6 @@ ul {
   }
 }
 
-/* ===== Helpers ===== */
 .accent {
   color: var(--primary);
 }
@@ -1291,4 +1281,67 @@ ul {
 #tracksGrid li:hover {
   transform: translateX(6px);
   border-color: var(--accent);
+}
+
+.modal {
+  display: none;
+
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0, 0, 0, .75);
+  backdrop-filter: blur(8px);
+
+  justify-content: center;
+  align-items: center;
+
+  z-index: 9999;
+}
+
+.modal-content {
+
+  width: min(900px, 90vw);
+  height: 85vh;
+
+  background: #111827;
+
+  border: 1px solid #2c3e50;
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  position: relative;
+
+  box-shadow: 0 30px 60px rgba(0, 0, 0, .45);
+}
+
+.modal iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: white;
+}
+
+.close-modal {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+
+  width: 40px;
+  height: 40px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #1f2937;
+  color: white;
+
+  font-size: 26px;
+  cursor: pointer;
+
+  z-index: 5;
+}
+
+.close-modal:hover {
+  background: #374151;
 }

@@ -70,9 +70,8 @@
           </h1>
 
           <p class="hero__lead">
-            CAD24 is a 48-hour engineering hackathon for makers, tinkerers, and
-            professional bug-creators. Hardware, software, AI, robots—if you can solder it
-            or compile it, bring it.
+            CAD24 is a 24-hour engineering hackathon for makers, engineers, and students. Develop a CAD model, make a
+            pitch, and get prizes for your work.
           </p>
 
           <div class="hero__actions">
@@ -211,21 +210,33 @@
         <p class="eyebrow">// join_the_comp</p> <!--FIX- change eyebrow text-->
         <h2 class="register__title">Reserve your <span class="accent">spot.</span></h2>
         <p class="register__lead">
-          Drop your email to lock in a badge. We'll send confirmation, logistics, and updates as the event approaches.
+          Registration is free, but spots are limited. Sign up now to secure your place in the hackathon. Registration
+          takes less than 5 minutes, and you can always change your mind later.
         </p>
 
-        <form id="registerForm" class="register__form">
-          <input id="emailInput" type="email" required placeholder="you@terminal.dev" aria-label="Email address" />
-          <button type="submit" class="btn btn--primary btn--lg">register() &rarr;</button>
-        </form>
-        <div id="registerSuccess" class="register__success" hidden>
-          <span class="accent">✔</span>
-          <span>Registered! Check your inbox — welcome to CAD24.</span>
-        </div>
+        <button id="openModal" class="btn btn--primary btn--lg">
+          register() →
+        </button>
+
 
 
       </div>
     </section>
+    <div id="registerModal" class="modal">
+
+      <div class="modal-content">
+
+        <button class="close-modal">&times;</button>
+
+        <iframe
+          src="https://docs.google.com/forms/d/e/1FAIpQLSfgAxgbrWjlKAJ7ENDY0WgXuG_nKMvuBOQAFyXG7tXMS0R4cg/viewform?embedded=true"
+          width="640" height="382" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>" width="100%"
+        height="700" frameborder="0">
+        </iframe>
+
+      </div>
+
+    </div>
   </main>
 
   <footer class="footer">
