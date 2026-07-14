@@ -213,30 +213,69 @@
           Registration is free, but spots are limited. Sign up now to secure your place in the hackathon. Registration
           takes less than 5 minutes, and you can always change your mind later.
         </p>
+        <form id="registrationForm" class="registration-form" action="https://formspree.io/f/xqerkvkp" method="POST">
 
-        <button id="openModal" class="btn btn--primary btn--lg">
-          register() →
-        </button>
+
+          <h2>CAD24 Registration</h2>
+
+
+          <label for="studentName">
+            Student Name
+          </label>
+
+          <input id="studentName" name="Student Name" type="text" placeholder="Student Name" required>
+
+
+          <label for="studentEmail">
+            Student Email
+          </label>
+
+          <input id="studentEmail" name="Student Email" type="email" placeholder="Student Email" required>
+
+
+          <label for="grade">
+            Grade
+          </label>
+
+          <input id="grade" name="Grade" type="number" min="6" max="12" placeholder="Grade" required>
+
+
+          <h3>Parent Information</h3>
+
+
+          <label for="parentName">
+            Parent Name
+          </label>
+
+          <input id="parentName" name="Parent Name" type="text" placeholder="Parent Name" required>
+
+
+          <label for="parentEmail">
+            Parent Email
+          </label>
+
+          <input id="parentEmail" name="Parent Email" type="email" placeholder="Parent Email" required>
+
+
+          <label for="parentPhone">
+            Parent Phone
+          </label>
+
+          <input id="parentPhone" name="Parent Phone" type="tel" placeholder="Parent Phone" required>
+
+
+          <button type="submit" class="btn btn--primary">
+            Submit Registration
+          </button>
+
+
+        </form>
 
 
 
       </div>
     </section>
-    <div id="registerModal" class="modal">
 
-      <div class="modal-content">
-
-        <button class="close-modal">&times;</button>
-
-        <iframe
-          src="https://docs.google.com/forms/d/e/1FAIpQLSfgAxgbrWjlKAJ7ENDY0WgXuG_nKMvuBOQAFyXG7tXMS0R4cg/viewform?embedded=true"
-          width="640" height="382" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>" width="100%"
-        height="700" frameborder="0">
-        </iframe>
-
-      </div>
-
-    </div>
   </main>
 
   <footer class="footer">
@@ -262,6 +301,8 @@
     </div>
   </footer>
 
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="script.js"></script>
 </body>
 
